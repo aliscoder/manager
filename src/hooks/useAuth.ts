@@ -1,7 +1,7 @@
 import { useRefreshTokenMutation } from "@state/api/auth";
 import { loginUser, logoutUser, updateUser } from "@state/reducers/authReducer";
 import { authSelector } from "@state/selectors/authSelector";
-import { deleteItem, getItem, setItem } from "@utils";
+import { EXPO_PUBLIC_APP_ID, deleteItem, getItem, setItem } from "@utils";
 import jwtDecode from "jwt-decode";
 import { useCallback, useEffect } from "react";
 import { AuthReturnType, BarberInterface, ClientInterface, DecodedTokenType } from "../types";
@@ -16,7 +16,8 @@ export default function useAuth() {
 
   const checkInitailAuth = useCallback(async (callback: Function) => {
     const token = await getItem("token");
-    const decoded = token ? jwtDecode<DecodedTokenType>(token) : null;
+    const decoded = { userId: EXPO_PUBLIC_APP_ID };
+    // const decoded = token ? jwtDecode<DecodedTokenType>(token) : null;
     if (decoded) {
       refreshToken(decoded.userId).then((data) => {
         if (data) {
