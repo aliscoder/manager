@@ -14,9 +14,11 @@ export default function useAuth() {
   const [refreshToken, { data: updatedData, isSuccess: tokenRefreshed }] =
     useRefreshTokenMutation();
 
-  const checkInitailAuth = useCallback(async (callback: Function) => {
+  const checkInitailAuth = useCallback(async (type: undefined | string, callback: Function) => {
     const token = await getItem("token");
-    const decoded = { userId: EXPO_PUBLIC_APP_ID };
+    const decoded = {
+      userId: type === "manager" ? "65638eadda8bba169a433c7a" : "65638eadda8bba169a433c7d",
+    };
     // const decoded = token ? jwtDecode<DecodedTokenType>(token) : null;
     if (decoded) {
       refreshToken(decoded.userId).then((data) => {

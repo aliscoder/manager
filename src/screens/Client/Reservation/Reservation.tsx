@@ -59,7 +59,6 @@ const Reservation = () => {
   const [selectedHour, setSelectedHour] = useState<Hour>();
   const [canSelectHour, setCanselectHour] = useState(false);
   const { openModal, isOpen, closeModal } = useModal();
-  const { openModal: openPayModal, isOpen: isPayModalOpen, closeModal: closePayModal } = useModal();
 
   const anyServiceSelected = selectedServices?.length > 0;
   useEffect(() => {
@@ -139,26 +138,17 @@ const Reservation = () => {
       openModal();
     } else {
       closeModal();
-      openPayModal();
+      handleReservation();
     }
   };
 
   const handleConfirm = useCallback(() => {
     closeModal();
-    openPayModal();
+    handleReservation();
   }, [selectedHour]);
 
   const handleReject = useCallback(() => {
     closeModal();
-  }, [selectedHour]);
-
-  const handlePayConfirm = useCallback(() => {
-    closePayModal();
-    WebBrowser.openBrowserAsync("https://api.nextpay.org/gateway/link/1Kv8hA4W8l");
-  }, [selectedHour]);
-
-  const handlePayReject = useCallback(() => {
-    closePayModal();
   }, [selectedHour]);
 
   const handleReservation = () => {
@@ -260,17 +250,6 @@ const Reservation = () => {
             مایل به ادامه هستید؟
           </TextTitle>
         )}
-      </ConfirmationModal>
-
-      <ConfirmationModal
-        onClose={closePayModal}
-        isOpen={isPayModalOpen}
-        onReject={handlePayReject}
-        onConfirm={handlePayConfirm}
-      >
-        <TextTitle textAlign="right" color="text.dark" fontFamily="YekanBold">
-          برای ثبت نوبت باید بیعانه پرداخت نمایید.مایل به ادامه هستید؟
-        </TextTitle>
       </ConfirmationModal>
     </Container>
   );

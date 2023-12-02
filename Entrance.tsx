@@ -1,4 +1,4 @@
-import { Error } from "@components";
+import { Button, Column, Error } from "@components";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import * as SplashScreen from "expo-splash-screen";
 import { Box, Center, NativeBaseProvider, StatusBar, View } from "native-base";
@@ -10,7 +10,8 @@ import AppNavigator from "./src/navigation/AppNavigator";
 
 const Entrance = () => {
   const { theme, checkInitailAuth } = useAuth();
-  const [isAppReady, setAppReady] = useState(false);
+  const [loaded, setloaded] = useState(false);
+  const [isAppReady, setAppReady] = useState(true);
   const { isError: shopLoadError, isSuccess: shopLoaded } = useShop();
   const onLayoutRootView = useCallback(async () => {
     if (isAppReady) {
@@ -18,13 +19,12 @@ const Entrance = () => {
     }
   }, [isAppReady]);
 
-  useEffect(() => {
-    checkInitailAuth(() => {
-      if (shopLoaded || shopLoadError) {
-        setAppReady(true);
-      }
+  const load = (type: string) => {
+    setloaded(false);
+    checkInitailAuth(type, () => {
+      setloaded(true);
     });
-  }, [shopLoaded, shopLoadError]);
+  };
 
   const MyTheme = {
     ...DefaultTheme,
@@ -48,7 +48,24 @@ const Entrance = () => {
               {Platform.OS === "web" ? (
                 <Center flex={1} w="full">
                   <View w="full" maxW={600} h="full">
-                    <AppNavigator />
+                    {loaded ? (
+                      <AppNavigator />
+                    ) : (
+                      <Column justifyContent="center" alignItems="center" h="full" space={4}>
+                        <Button
+                          onPress={() => load("manager")}
+                          w="1/2"
+                          scheme="success"
+                          title="تست مدیریت سالن"
+                        />
+                        <Button
+                          onPress={() => load("client")}
+                          w="1/2"
+                          scheme="warning"
+                          title="تست سمت مشتریان"
+                        />
+                      </Column>
+                    )}
                   </View>
                 </Center>
               ) : (
