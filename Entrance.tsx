@@ -68,8 +68,23 @@ const Entrance = () => {
                     )}
                   </View>
                 </Center>
-              ) : (
+              ) : loaded ? (
                 <AppNavigator />
+              ) : (
+                <Column justifyContent="center" alignItems="center" h="full" space={4}>
+                  <Button
+                    onPress={() => load("manager")}
+                    w="1/2"
+                    scheme="success"
+                    title="تست مدیریت سالن"
+                  />
+                  <Button
+                    onPress={() => load("client")}
+                    w="1/2"
+                    scheme="warning"
+                    title="تست سمت مشتریان"
+                  />
+                </Column>
               )}
             </NavigationContainer>
           </Box>
