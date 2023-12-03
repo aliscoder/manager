@@ -1,0 +1,21 @@
+{
+  "background_color": "#151515",
+  "display": "standalone",
+  "lang": "en",
+  "name": "Manager",
+  "short_name": "Manager",
+  "start_url": "/?utm_source=web_app_manifest",
+  "orientation": "portrait",
+  "related_applications": [
+    {
+      "platform": "itunes",
+      "id": "com.manager.app"
+    },
+    {
+      "platform": "play",
+      "url": "http://play.google.com/store/apps/details?id=com.manager.app",
+      "id": "com.manager.app"
+    }
+  ],
+  "prefer_related_applications": true
+}

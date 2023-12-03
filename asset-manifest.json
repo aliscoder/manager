@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/manager/static/css/main.9295e3e0.css",
+    "main.js": "/manager/static/js/main.2ec2e9c9.js",
+    "static/js/216.9f116e4e.js": "/manager/static/js/216.9f116e4e.js",
+    "static/media/MaterialCommunityIcons.ttf": "/manager/static/media/MaterialCommunityIcons.5d42b4e60858731e7b65.ttf",
+    "static/media/Base.jpg": "/manager/static/media/Base.fcaeaf7cca13d3dde112.jpg",
+    "static/media/Ionicons.ttf": "/manager/static/media/Ionicons.3517aeaa34b2f8cd8eef.ttf",
+    "static/media/FontAwesome.ttf": "/manager/static/media/FontAwesome.1e59d2330b4c6deb84b3.ttf",
+    "static/media/Logo.png": "/manager/static/media/Logo.369e1db6cf84f4437c12.png",
+    "static/media/AntDesign.ttf": "/manager/static/media/AntDesign.163adab9dbd7cb1ed12a.ttf",
+    "static/media/Yekan-Light.ttf": "/manager/static/media/Yekan-Light.aaaaece0a9a9638b0c18.ttf",
+    "static/media/Yekan-Medium.ttf": "/manager/static/media/Yekan-Medium.425762078aac1e6d5c2f.ttf",
+    "static/media/Yekan.ttf": "/manager/static/media/Yekan.57d21f9129237cea1fd3.ttf",
+    "static/media/Yekan-ExtraBold.ttf": "/manager/static/media/Yekan-ExtraBold.d88a9d60c9aac43a82f3.ttf",
+    "static/media/Yekan-Bold.ttf": "/manager/static/media/Yekan-Bold.b6da2dc47e3ed97283cd.ttf",
+    "static/media/Banner.jpg": "/manager/static/media/Banner.95ea7997040d795ddf09.jpg",
+    "static/media/SimpleLineIcons.ttf": "/manager/static/media/SimpleLineIcons.3ec13a24af3fdda11107.ttf",
+    "favicon.ico": "/manager/favicon.ico",
+    "index.html": "/manager/index.html",
+    "static/media/Avatar.png": "/manager/static/media/Avatar.fedca0dca7dc6798afac.png",
+    "favicon-32.png": "/manager/favicon-32.png",
+    "manifest.json": "/manager/manifest.json",
+    "favicon-16.png": "/manager/favicon-16.png",
+    "serve.json": "/manager/serve.json",
+    "main.9295e3e0.css.map": "/manager/static/css/main.9295e3e0.css.map",
+    "main.2ec2e9c9.js.map": "/manager/static/js/main.2ec2e9c9.js.map",
+    "216.9f116e4e.js.map": "/manager/static/js/216.9f116e4e.js.map"
+  },
+  "entrypoints": [
+    "static/js/216.9f116e4e.js",
+    "static/css/main.9295e3e0.css",
+    "static/js/main.2ec2e9c9.js"
+  ]
+}
