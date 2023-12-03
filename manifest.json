@@ -4,7 +4,7 @@
   "lang": "en",
   "name": "Manager",
   "short_name": "Manager",
-  "start_url": "/?utm_source=web_app_manifest",
+  "start_url": "/manager",
   "orientation": "portrait",
   "related_applications": [
     {
